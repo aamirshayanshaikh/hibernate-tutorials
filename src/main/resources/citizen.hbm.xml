@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 5.3//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="entity">
+<hibernate-mapping package="entityonetoone">
     <class name="Citizen" table="citizen">
         <id name="citizenId">
             <generator class="increment"></generator>

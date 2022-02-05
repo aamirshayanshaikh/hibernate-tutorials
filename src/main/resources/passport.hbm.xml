@@ -3,8 +3,8 @@
         "-//Hibernate/Hibernate Mapping DTD 5.3//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
-<hibernate-mapping package="entity">
-    <class name="entity.Passport" table="passport">
+<hibernate-mapping package="entityonetoone">
+    <class name="entityonetoone.Passport" table="passport">
         <id name="passportId">
             <generator class="foreign">
                 <param name="property">citizen</param>

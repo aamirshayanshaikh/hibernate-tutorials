@@ -1,4 +1,4 @@
-package entity;
+package entityonetoone;
 
 public class Passport {
     private int passportId;
