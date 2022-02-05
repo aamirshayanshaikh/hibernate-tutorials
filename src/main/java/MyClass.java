@@ -11,14 +11,14 @@ public class MyClass {
             SessionFactory sessionFactory = HibernateUtil.getInstnce();
             Session session = sessionFactory.openSession();
 
-            Citizen person = new Citizen();
-            person.setName("Chandrashekhar");
+            Citizen citizen = new Citizen();
+            citizen.setName("Aamir");
 
             Passport passport = new Passport();
             passport.setPassportno("12346856");
-            passport.setCitizen(person);
+            passport.setCitizen(citizen);
             Transaction transaction = session.beginTransaction();
-            session.save(person);
+            session.save(citizen);
             session.save(passport);
             transaction.commit();
 
