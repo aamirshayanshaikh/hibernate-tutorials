@@ -1,19 +1,19 @@
 package entity;
 
+public class Citizen {
 
-public class Citizen  {
-    private Integer id;
+    private int citizenId;
     private String name;
+    private String email;
     private String address;
+    private Passport passport;
 
-
-
-    public Integer getId() {
-        return id;
+    public int getCitizenId() {
+        return citizenId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCitizenId(int citizenId) {
+        this.citizenId = citizenId;
     }
 
     public String getName() {
@@ -22,6 +22,22 @@ public class Citizen  {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Passport getPassport() {
+        return passport;
+    }
+
+    public void setPassport(Passport passport) {
+        this.passport = passport;
     }
 
     public String getAddress() {

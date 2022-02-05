@@ -1,14 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE hibernate-mapping PUBLIC
-        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "-//Hibernate/Hibernate Mapping DTD 5.3//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="entity">
-    <class name="Passport" table="passrtkkk123">
-        <id name="id">
-            <generator class="increment"></generator>
+    <class name="entity.Passport" table="passport">
+        <id name="passportId">
+            <generator class="foreign">
+                <param name="property">citizen</param>
+            </generator>
         </id>
-        <property name="passportno" ></property>
-        <many-to-one name="citizen" class="Citizen" unique="true" />
+        <property name="passportNo"></property>
+
+        <one-to-one name="citizen"></one-to-one>
     </class>
+
 </hibernate-mapping>

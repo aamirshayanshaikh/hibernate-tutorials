@@ -1,26 +1,25 @@
 package entity;
 
-
 public class Passport {
-    private Integer id;
-    private String passportno;
+    private int passportId;
+    private int passportNo;
     private Citizen citizen;
 
-
-    public Integer getId() {
-        return id;
+    public int getPassportId() {
+        return passportId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setPassportId(int passportId) {
+        this.passportId = passportId;
     }
 
-    public String getPassportno() {
-        return passportno;
+
+    public int getPassportNo() {
+        return passportNo;
     }
 
-    public void setPassportno(String passportNo) {
-        this.passportno = passportNo;
+    public void setPassportNo(int pincode) {
+        this.passportNo = pincode;
     }
 
     public Citizen getCitizen() {

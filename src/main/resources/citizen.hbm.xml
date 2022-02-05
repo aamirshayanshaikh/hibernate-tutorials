@@ -4,12 +4,15 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="entity">
-    <class name="Citizen" table="citizen123">
-        <id name="id">
+    <class name="Citizen" table="citizen">
+        <id name="citizenId">
             <generator class="increment"></generator>
         </id>
-        <property name="name" ></property>
-        <property name="address" ></property>
+        <property name="name"></property>
+        <property name="email"></property>
+        <property name="address"></property>
+
+        <one-to-one name="passport" cascade="all"></one-to-one>
     </class>
 
 </hibernate-mapping>
