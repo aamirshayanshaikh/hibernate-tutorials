@@ -1,3 +1,5 @@
+import entitymanytomany.Category;
+import entitymanytomany.Stock;
 import entitymanytoone.Employee;
 import entitymanytoone.Organization;
 import org.hibernate.Session;
@@ -6,8 +8,10 @@ import org.hibernate.Transaction;
 import util.HibernateUtil;
 
 import javax.persistence.TypedQuery;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class MyClass {
 
@@ -15,28 +19,30 @@ public class MyClass {
         SessionFactory sessionFactory = HibernateUtil.getInstnce();
         Session session = sessionFactory.openSession();
 
-        Organization organization = new Organization();
-        organization.setOrgName("Javakar");
+        Stock stock = new Stock();
+        stock.setStockName("ABC Perfume");
 
-        Employee employee1 = new Employee();
-        employee1.setEmployeeName("Aamir");
+        Category category1 = new Category();
+        category1.setName("Fragrance");
+        Category category2 = new Category();
+        category2.setName("Fashion");
 
-        Employee employee2 = new Employee();
-        employee2.setEmployeeName("Shayan");
+        Set<Category> categories = new HashSet<>();
+        categories.add(category1);
+        categories.add(category2);
 
-        employee1.setOrganization(organization);
-        employee2.setOrganization(organization);
+        stock.setCategories(categories);
+
 
         Transaction transaction = session.beginTransaction();
 
-        session.save(employee1);
-        session.save(employee2);
+        session.save(stock);
         transaction.commit();
 
 
 
         /*################################### Retrieving Data ################################################3*/
-        TypedQuery query = session.createQuery("from Employee e");
+        /*TypedQuery query = session.createQuery("from Employee e");
         List<Employee> list = query.getResultList();
         Iterator<Employee> itr = list.iterator();
         while (itr.hasNext()) {
@@ -45,7 +51,7 @@ public class MyClass {
             System.out.println("id = "+employee.getId() + " emp_name = " + employee.getEmployeeName()+" org_name "+organization.getOrgName());
 
 
-        }
+        }*/
 
         session.close();
         sessionFactory.close();

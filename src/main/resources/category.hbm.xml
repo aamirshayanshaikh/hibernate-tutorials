@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 5.3//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="entitymanytomany">
+    <class name="Category" >
+        <id name="categoryId" type="java.lang.Integer">
+            <generator class="identity" />
+        </id>
+        <property name="name" >
+
+        </property>
+        <set name="stocks" table="stock_category"
+             inverse="false" lazy="true" fetch="select" cascade="all">
+            <key column="stock_id" />
+            <many-to-many column="cat_Id" class="Stock" />
+        </set>
+    </class>
+</hibernate-mapping>
